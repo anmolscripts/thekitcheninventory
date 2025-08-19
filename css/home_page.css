@@ -1,0 +1,13 @@
+.bg-banner {
+    background-image: var(--baner-image);
+    background-size: 100% auto;
+    background-attachment: fixed;
+    height: 100vh;
+    height: 100svh;
+    background-position: center center;
+}
+
+.bg-banner > div {
+    background-color: rgba(0,0,0,.6);
+    height: 100%;
+}
