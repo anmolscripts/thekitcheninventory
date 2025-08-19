@@ -8,6 +8,16 @@
 }
 
 .bg-banner > div {
-    background-color: rgba(0,0,0,.6);
+    background-color: rgba(0,0,0,.7);
     height: 100%;
+}
+
+.services-grid img {
+    height: 30rem;
+    object-fit: cover;
+    width: 100%;
+}
+.services-grid .category-content {
+    backdrop-filter: blur(3px);
+    background-color: rgba(255,255,255,.8);
 }
