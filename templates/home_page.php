@@ -16,6 +16,13 @@
   body {
     --baner-image: url('<?= get_stylesheet_directory_uri(); ?>/images/img/banner.jpg');
   }
+
+  .chose-icon-container {
+    /* height: 12rem; */
+    display: flex;
+    align-items: end;
+    justify-content: center;
+  }
 </style>
 <link rel="stylesheet" href="<?= get_stylesheet_directory_uri(); ?>/css/home_page.css">
 
@@ -26,12 +33,12 @@
       <div class="row justify-content-center align-items-center h-100">
         <div class="">
           <h1 class="section-title text-center mt-4 text-white" data-aos="fade-up">The Kitchen Inventory</h1>
-          <h3 class="fs-2 text-center text-white">Your Complete Industrial Kitchen & Gas Pipeline Partner</h3>
-          <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+          <h3 class="fs-2 text-center text-white" data-aos="fade-up" data-aos-delay="300">Your Complete Industrial Kitchen & Gas Pipeline Partner</h3>
+          <div class="text-center" data-aos="fade-up" data-aos-delay="600">
             <p class="text-white fs-5">From LPG & PNG pipeline installation to world-class industrial kitchen equipment – all under one roof.</p>
           </div>
           <div class="text-center pt-5">
-            <button class="btn header-cta btn-lg rounded-3 text-uppercase mx-auto">Get a Quote</button>
+            <button class="btn header-cta btn-lg rounded-3 text-uppercase mx-auto" data-aos="zoom-out" data-aos-delay="900">Get a Quote</button>
           </div>
         </div>
       </div>
@@ -39,12 +46,12 @@
   </div>
 </section>
 
-<section id="billboard" class="bg-light py-5 position-relative">
+<section id="billboard" class="bg-light py-5 position-relative rellax" >
   <div class="container">
     <div class="row justify-content-center">
       <h1 class="section-title text-center mt-4" data-aos="fade-up">Our Services</h1>
       <div class="col-md-7 text-center" data-aos="fade-up" data-aos-delay="300">
-        <p>At <strong>The Kitchen Inventory</strong>, we provide end-to-end solutions for industrial kitchens, combining safe gas pipeline installations, premium equipment supply, and reliable maintenance support. Whether you are building a new facility or upgrading an existing one, we ensure efficiency, safety, and long-term reliability.</p>
+        <p class="text-black fs-5">At <strong>The Kitchen Inventory</strong>, we provide end-to-end solutions for industrial kitchens, combining safe gas pipeline installations, premium equipment supply, and reliable maintenance support. Whether you are building a new facility or upgrading an existing one, we ensure efficiency, safety, and long-term reliability.</p>
       </div>
     </div>
     <div class="open-up services-grid" data-aos="zoom-out">
@@ -94,50 +101,66 @@
       </div>
     </div>
     <div class="text-center pt-5">
-      <button class="btn header-cta btn-lg rounded-3 text-uppercase mx-auto">Get a Quote</button>
+      <button class="btn header-cta btn-lg rounded-3 text-uppercase mx-auto" >Get a Quote</button>
     </div>
   </div>
 </section>
 
 
 
-<section class="features py-5">
+<section class="features py-5 rellax" >
   <div class="container">
+    <div class="row justify-content-center">
+      <h1 class="section-title text-center mt-4" data-aos="fade-up">Why Choose Us</h1>
+      <div class="col-md-7 text-center" data-aos="fade-up" data-aos-delay="300">
+        <p class="text-black fs-5">At <strong>The Kitchen Inventory</strong>, we don’t just deliver products — we provide <strong>complete industrial solutions</strong> that ensure your kitchen is safe, reliable, and built to perform at scale. Here’s why businesses trust us:</p>
+      </div>
+    </div>
     <div class="row">
-      <div class="col-md-3 text-center" data-aos="fade-in" data-aos-delay="0">
-        <div class="py-5">
-          <svg width="38" height="38" viewBox="0 0 24 24">
-            <use xlink:href="#calendar"></use>
-          </svg>
-          <h4 class="element-title text-capitalize my-3">Book An Appointment</h4>
-          <p>At imperdiet dui accumsan sit amet nulla risus est ultricies quis.</p>
+      <div class="col-md-12 text-center">
+        <div class="py-5 row">
+          <div class="chose-icon-container col-md-6 " data-aos="zoom-out-right" data-aos-anchor-placement="top-bottom">
+            <img src="<?= get_stylesheet_directory_uri(); ?>/images/img/Safety-Compliance.svg" alt="" class="img-fluid">
+          </div>
+          <div class="col-md-6 align-self-center" data-aos="zoom-out-left" data-aos-anchor-placement="top-bottom">
+            <h4 class="element-title text-capitalize my-3">Safety & Compliance</h4>
+            <p class="text-black fs-6">Every pipeline and equipment installation follows strict <strong>industry safety standards</strong> and regulations, giving you complete peace of mind.</p>
+          </div>
         </div>
       </div>
-      <div class="col-md-3 text-center" data-aos="fade-in" data-aos-delay="300">
-        <div class="py-5">
-          <svg width="38" height="38" viewBox="0 0 24 24">
-            <use xlink:href="#shopping-bag"></use>
-          </svg>
-          <h4 class="element-title text-capitalize my-3">Pick up in store</h4>
-          <p>At imperdiet dui accumsan sit amet nulla risus est ultricies quis.</p>
+      <div class="col-md-12 text-center" >
+        <div class="py-5 row">
+          <div class="col-md-6 align-self-center" data-aos="zoom-out-right" data-aos-anchor-placement="top-bottom">
+            <h4 class="element-title text-capitalize my-3">Industrial-Grade Solutions</h4>
+            <p class="text-black fs-6">We specialise in <strong>heavy-duty equipment and systems</strong> designed for continuous use in large-scale operations.</p>
+          </div>
+          <div class="chose-icon-container col-md-6" data-aos="zoom-out-left" data-aos-anchor-placement="top-bottom">
+            <img src="<?= get_stylesheet_directory_uri(); ?>/images/img/Industrial-Grade-Solutions.svg" alt="" class="img-fluid">
+          </div>
+
         </div>
       </div>
-      <div class="col-md-3 text-center" data-aos="fade-in" data-aos-delay="600">
-        <div class="py-5">
-          <svg width="38" height="38" viewBox="0 0 24 24">
-            <use xlink:href="#gift"></use>
-          </svg>
-          <h4 class="element-title text-capitalize my-3">Special packaging</h4>
-          <p>At imperdiet dui accumsan sit amet nulla risus est ultricies quis.</p>
+      <div class="col-md-12 text-center" >
+        <div class="py-5 row">
+          <div class="chose-icon-container col-md-6" data-aos="zoom-out-right" data-aos-anchor-placement="top-bottom">
+            <img src="<?= get_stylesheet_directory_uri(); ?>/images/img/expert-Engineering-Team.svg" alt="" class="img-fluid">
+          </div>
+          <div class="col-md-6 align-self-center" data-aos="zoom-out-left" data-aos-anchor-placement="top-bottom">
+            <h4 class="element-title text-capitalize my-3">Expert Engineering Team</h4>
+            <p class="text-black fs-6">Our team of <strong>skilled engineers and technicians</strong> bring years of experience in industrial kitchen projects.</p>
+          </div>
         </div>
       </div>
-      <div class="col-md-3 text-center" data-aos="fade-in" data-aos-delay="900">
-        <div class="py-5">
-          <svg width="38" height="38" viewBox="0 0 24 24">
-            <use xlink:href="#arrow-cycle"></use>
-          </svg>
-          <h4 class="element-title text-capitalize my-3">free global returns</h4>
-          <p>At imperdiet dui accumsan sit amet nulla risus est ultricies quis.</p>
+      <div class="col-md-12 text-center" >
+        <div class="py-5 row">
+          <div class="col-md-6 align-self-center" data-aos="zoom-out-right" data-aos-anchor-placement="top-bottom">
+            <h4 class="element-title text-capitalize my-3">End-to-End B2B Services</h4>
+            <p class="text-black fs-6">From <strong>design and installation to maintenance and support</strong>, we provide everything under one roof.</p>
+          </div>
+          <div class="chose-icon-container col-md-6" data-aos="zoom-out-left" data-aos-anchor-placement="top-bottom">
+            <img src="<?= get_stylesheet_directory_uri(); ?>/images/img/B2B-Services.svg" alt="" class="img-fluid">
+          </div>
+
         </div>
       </div>
     </div>

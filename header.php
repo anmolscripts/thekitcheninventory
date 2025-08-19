@@ -255,7 +255,7 @@
   </div>
 
   <nav
-    class="navbar position-fixed top-0 w-100 navbar-expand-lg bg-light text-uppercase fs-6 p-3  align-items-center">
+    class="navbar position-fixed top-0 w-100 navbar-expand-lg bg-light text-uppercase fs-6 p-3  align-items-center" data-aos="fade-down">
     <div class="container-fluid">
       <div class="row justify-content-between align-items-center w-100">
 
