@@ -146,14 +146,14 @@
 <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
 <script>
     // Also can pass in optional settings block
-    var rellax = new Rellax('.rellax', {
-        speed: 12,
-        center: false,
-        wrapper: null,
-        round: true,
-        vertical: true,
-        horizontal: false
-    });
+    // var rellax = new Rellax('.rellax', {
+    //     speed: -2,
+    //     center: false,
+    //     wrapper: null,
+    //     round: true,
+    //     vertical: true,
+    //     horizontal: false
+    // });
 </script>
 </body>
 

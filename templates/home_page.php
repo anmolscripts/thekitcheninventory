@@ -46,7 +46,8 @@
   </div>
 </section>
 
-<section id="billboard" class="bg-light py-5 position-relative rellax" >
+<section id="billboard" class="bg-light py-5 position-relative rellax" data-rellax-speed="20"
+  data-rellax-xs-speed="-5">
   <div class="container">
     <div class="row justify-content-center">
       <h1 class="section-title text-center mt-4" data-aos="fade-up">Our Services</h1>
@@ -108,7 +109,7 @@
 
 
 
-<section class="features py-5 rellax" >
+<section class="features py-5 rellax" data-rellax-speed="20">
   <div class="container">
     <div class="row justify-content-center">
       <h1 class="section-title text-center mt-4" data-aos="fade-up">Why Choose Us</h1>
@@ -119,10 +120,10 @@
     <div class="row">
       <div class="col-md-12 text-center">
         <div class="py-5 row">
-          <div class="chose-icon-container col-md-6 " data-aos="zoom-out-right" data-aos-anchor-placement="top-bottom">
+          <div class="chose-icon-container col-md-6 " data-aos="zoom-out-right" >
             <img src="<?= get_stylesheet_directory_uri(); ?>/images/img/Safety-Compliance.svg" alt="" class="img-fluid">
           </div>
-          <div class="col-md-6 align-self-center" data-aos="zoom-out-left" data-aos-anchor-placement="top-bottom">
+          <div class="col-md-6 align-self-center" data-aos="zoom-out-left" data-aos-delay="300">
             <h4 class="element-title text-capitalize my-3">Safety & Compliance</h4>
             <p class="text-black fs-6">Every pipeline and equipment installation follows strict <strong>industry safety standards</strong> and regulations, giving you complete peace of mind.</p>
           </div>
@@ -130,11 +131,11 @@
       </div>
       <div class="col-md-12 text-center" >
         <div class="py-5 row">
-          <div class="col-md-6 align-self-center" data-aos="zoom-out-right" data-aos-anchor-placement="top-bottom">
+          <div class="col-md-6 align-self-center" data-aos="zoom-out-right" data-aos-delay="300">
             <h4 class="element-title text-capitalize my-3">Industrial-Grade Solutions</h4>
             <p class="text-black fs-6">We specialise in <strong>heavy-duty equipment and systems</strong> designed for continuous use in large-scale operations.</p>
           </div>
-          <div class="chose-icon-container col-md-6" data-aos="zoom-out-left" data-aos-anchor-placement="top-bottom">
+          <div class="chose-icon-container col-md-6" data-aos="zoom-out-left" >
             <img src="<?= get_stylesheet_directory_uri(); ?>/images/img/Industrial-Grade-Solutions.svg" alt="" class="img-fluid">
           </div>
 
@@ -142,10 +143,10 @@
       </div>
       <div class="col-md-12 text-center" >
         <div class="py-5 row">
-          <div class="chose-icon-container col-md-6" data-aos="zoom-out-right" data-aos-anchor-placement="top-bottom">
+          <div class="chose-icon-container col-md-6" data-aos="zoom-out-right" >
             <img src="<?= get_stylesheet_directory_uri(); ?>/images/img/expert-Engineering-Team.svg" alt="" class="img-fluid">
           </div>
-          <div class="col-md-6 align-self-center" data-aos="zoom-out-left" data-aos-anchor-placement="top-bottom">
+          <div class="col-md-6 align-self-center" data-aos="zoom-out-left" data-aos-delay="300">
             <h4 class="element-title text-capitalize my-3">Expert Engineering Team</h4>
             <p class="text-black fs-6">Our team of <strong>skilled engineers and technicians</strong> bring years of experience in industrial kitchen projects.</p>
           </div>
@@ -153,11 +154,11 @@
       </div>
       <div class="col-md-12 text-center" >
         <div class="py-5 row">
-          <div class="col-md-6 align-self-center" data-aos="zoom-out-right" data-aos-anchor-placement="top-bottom">
+          <div class="col-md-6 align-self-center" data-aos="zoom-out-right" data-aos-delay="300">
             <h4 class="element-title text-capitalize my-3">End-to-End B2B Services</h4>
             <p class="text-black fs-6">From <strong>design and installation to maintenance and support</strong>, we provide everything under one roof.</p>
           </div>
-          <div class="chose-icon-container col-md-6" data-aos="zoom-out-left" data-aos-anchor-placement="top-bottom">
+          <div class="chose-icon-container col-md-6" data-aos="zoom-out-left" >
             <img src="<?= get_stylesheet_directory_uri(); ?>/images/img/B2B-Services.svg" alt="" class="img-fluid">
           </div>
 
