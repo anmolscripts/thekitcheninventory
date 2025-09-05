@@ -66,8 +66,8 @@
                     <tr>
                         <th scope="row">1</th>
                         <td><input type="text" class="form-control fw-bold item" placeholder="Item Name"></td>
-                        <td><input onkeyup="calculateAmount(this)" type="number" class="form-control fw-bold text-end qty" min="0" step="any" placeholder="Quantity"></td>
-                        <td><input onkeyup="calculateAmount(this)" type="number" class="form-control fw-bold text-end rate" min="0" step="any" placeholder="Rate"></td>
+                        <td><input onkeyup="calculateRowAmount(this)" type="number" class="form-control fw-bold text-end qty" min="0" step="any" placeholder="Quantity"></td>
+                        <td><input onkeyup="calculateRowAmount(this)" name="rate" type="number" class="form-control fw-bold text-end rate" min="0" step="any" placeholder="Rate"></td>
                         <td><input type="number" class="form-control fw-bold text-end amount" min="0" step="any" placeholder="Amount" readonly></td>
                     </tr>
                 </tbody>
@@ -75,41 +75,41 @@
                     <tr>
                         <th scope="row" ></th>
                         <td colspan="3" class="fw-bold fs-5">Basic Total</td>
-                        <td><input type="number" class="form-control fw-bold text-end" min="0" step="any" placeholder="Amount" readonly></td>
+                        <td><input id="basic" type="number" class="form-control fw-bold text-end" min="0" step="any" placeholder="Amount" readonly></td>
                     </tr>
                     <tr>
                         <th scope="row" ></th>
                         <td colspan="2" class="fw-bold fs-5">SGST</td>
                         <td><input type="number" class="form-control fw-bold text-end" min="0" step="any" placeholder="Persentage"></td>
-                        <td><input type="number" class="form-control fw-bold text-end" min="0" step="any" placeholder="Amount" readonly></td>
+                        <td><input id="sgst" type="number" class="form-control fw-bold text-end" min="0" step="any" placeholder="Amount" value="0" readonly></td>
                     </tr>
                     <tr>
                         <th scope="row" ></th>
                         <td colspan="2" class="fw-bold fs-5">CGST</td>
                         <td><input type="number" class="form-control fw-bold text-end" min="0" step="any" placeholder="Persentage"></td>
-                        <td><input type="number" class="form-control fw-bold text-end" min="0" step="any" placeholder="Amount" readonly></td>
+                        <td><input id="cgst" type="number" class="form-control fw-bold text-end" min="0" step="any" placeholder="Amount" value="0" readonly></td>
                     </tr>
                     <tr>
                         <th scope="row" ></th>
                         <td colspan="2" class="fw-bold fs-5">IGST</td>
                         <td><input type="number" class="form-control fw-bold text-end" min="0" step="any" placeholder="Persentage"></td>
-                        <td><input type="number" class="form-control fw-bold text-end" min="0" step="any" placeholder="Amount" readonly></td>
+                        <td><input id="igst" type="number" class="form-control fw-bold text-end" min="0" step="any" placeholder="Amount" value="0" readonly></td>
                     </tr>
                     <tr>
                         <th scope="row" ></th>
                         <td colspan="3" class="fw-bold fs-5">Total After Tex</td>
-                        <td><input type="number" class="form-control fw-bold text-end" min="0" step="any" placeholder="Amount" readonly></td>
+                        <td><input id="afterTex" type="number" class="form-control fw-bold text-end" min="0" step="any" placeholder="Amount" value="0" readonly></td>
                     </tr>
                     <tr>
                         <th scope="row" ></th>
                         <td colspan="2" class="fw-bold fs-5">Round Off</td>
                         <td><input type="number" class="form-control fw-bold text-end" min="0" step="any" placeholder="Persentage"></td>
-                        <td><input type="number" class="form-control fw-bold text-end" min="0" step="any" placeholder="Amount" readonly></td>
+                        <td><input id="roundOff" type="number" class="form-control fw-bold text-end" min="0" step="any" placeholder="Amount" value="0" readonly></td>
                     </tr>
                     <tr class="table-group-divider">
                         <th scope="row" ></th>
                         <td colspan="3" class="fw-bold fs-4">Total</td>
-                        <td><input type="number" class="form-control fw-bold text-end fs-4" min="0" step="any" placeholder="Amount" readonly></td>
+                        <td><input id="grandTotal" type="number" class="form-control fw-bold text-end fs-4" min="0" step="any" placeholder="Amount" readonly></td>
                     </tr>
                 </tfoot>
             </table>

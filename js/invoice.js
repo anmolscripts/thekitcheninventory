@@ -25,15 +25,14 @@ document.addEventListener("keydown", function (e) {
                     newTr.innerHTML = `
                         <th scope="row">${rowCount}</th>
                         <td><input type="text" class="form-control fw-bold item" placeholder="Item Name"></td>
-                        <td><input onkeyup="calculateAmount(this)" type="number" class="form-control fw-bold text-end qty" min="0" step="any" placeholder="Quantity"></td>
-                        <td><input onkeyup="calculateAmount(this)" type="number" class="form-control fw-bold text-end rate" min="0" step="any" placeholder="Rate"></td>
+                        <td><input onkeyup="calculateRowAmount(this)" type="number" class="form-control fw-bold text-end qty" min="0" step="any" placeholder="Quantity"></td>
+                        <td><input onkeyup="calculateRowAmount(this)" type="number" class="form-control fw-bold text-end rate" min="0" step="any" placeholder="Rate"></td>
                         <td><input type="number" class="form-control fw-bold text-end amount" min="0" step="any" placeholder="Amount" readonly></td>
                     `;
                     tbody.appendChild(newTr);
                     newTr.querySelector("input").focus(); // naye row ka Item focus
                 }
             } else if (idx > -1 && idx < inputs.length - 1) {
-                // ✅ Item → Qty, Qty → Rate
                 inputs[idx + 1].focus();
             }
         }
@@ -41,10 +40,42 @@ document.addEventListener("keydown", function (e) {
 });
 
 
-const calculateAmount = (el) => {
+const calculateRowAmount = (el) => {
   const tr = el.closest('tr');
   const qty = parseInt(tr.querySelector('.qty').value);
   const  rate = parseInt(tr.querySelector('.rate').value);
   tr.querySelector('.amount').value = qty * rate;
+  calculateAmount();
+}
 
+
+const calculateAmount = () => {
+    const invoiceRows = document.querySelectorAll('.invoice-body tr');
+    if(invoiceRows.length > 0) {
+        let totalAmount = 0;
+        invoiceRows.forEach(row => {
+            const amount = row.querySelector('.amount');
+            if(amount && amount.value != '') {
+
+                totalAmount += parseInt(amount.value);
+            }
+        });
+        document.getElementById('basic').value = totalAmount;
+    }
+
+    const sgst = document.getElementById('sgst');
+    const cgst = document.getElementById('cgst');
+    const igst = document.getElementById('igst');
+    const afterTex = document.getElementById('afterTex');
+    const roundOff = document.getElementById('roundOff');
+    const grandTotal = document.getElementById('grandTotal');
+
+    if(sgst && cgst && igst && afterTex && roundOff && grandTotal) {
+        const sgstValue = parseInt(sgst);
+        const cgstValue = parseInt(cgst);
+        const igstValue = parseInt(igst);
+        const afterTexValue = parseInt(afterTex);
+        const roundOffValue = parseInt(roundOff);
+        const grandTotalValue = parseInt(grandTotal);
+    }
 }
