@@ -51,8 +51,9 @@ const calculateRowAmount = (el) => {
 
 const calculateAmount = () => {
     const invoiceRows = document.querySelectorAll('.invoice-body tr');
+    let totalAmount = 0;
     if(invoiceRows.length > 0) {
-        let totalAmount = 0;
+        
         invoiceRows.forEach(row => {
             const amount = row.querySelector('.amount');
             if(amount && amount.value != '') {
@@ -71,11 +72,27 @@ const calculateAmount = () => {
     const grandTotal = document.getElementById('grandTotal');
 
     if(sgst && cgst && igst && afterTex && roundOff && grandTotal) {
-        const sgstValue = parseInt(sgst);
-        const cgstValue = parseInt(cgst);
-        const igstValue = parseInt(igst);
-        const afterTexValue = parseInt(afterTex);
-        const roundOffValue = parseInt(roundOff);
-        const grandTotalValue = parseInt(grandTotal);
+        const sgstValue = parseFloat(sgst.value);
+        const cgstValue = parseFloat(cgst.value);
+        const igstValue = parseFloat(igst.value);
+        const afterTexValue = totalAmount + sgstValue + cgstValue + igstValue;
+        const roundOffValue = parseFloat(roundOff.value);
+        const grandTotalValue = afterTexValue - roundOffValue;
+        afterTex.value = afterTexValue.toFixed(2);
+        grandTotal.value = grandTotalValue.toFixed(2);
     }
+}
+
+const calculateTex = (value, targetId) => {
+    const tax = parseFloat(value);
+    const basic = parseFloat(document.getElementById('basic').value);
+    const perValue = (tax / 100) * basic;
+    document.getElementById(targetId).value = perValue.toFixed(2);
+    calculateAmount();
+}
+
+const calculateRoundOff = (value, targetId) => {
+    const roundoff = parseFloat(value);
+    document.getElementById(targetId).value = roundoff.toFixed(2);
+    calculateAmount();
 }

@@ -80,19 +80,19 @@
                     <tr>
                         <th scope="row" ></th>
                         <td colspan="2" class="fw-bold fs-5">SGST</td>
-                        <td><input type="number" class="form-control fw-bold text-end" min="0" step="any" placeholder="Persentage"></td>
+                        <td><input onkeyup="calculateTex(this.value, 'sgst')" type="number" class="form-control fw-bold text-end" min="0" step="any" placeholder="Persentage"></td>
                         <td><input id="sgst" type="number" class="form-control fw-bold text-end" min="0" step="any" placeholder="Amount" value="0" readonly></td>
                     </tr>
                     <tr>
                         <th scope="row" ></th>
                         <td colspan="2" class="fw-bold fs-5">CGST</td>
-                        <td><input type="number" class="form-control fw-bold text-end" min="0" step="any" placeholder="Persentage"></td>
+                        <td><input onkeyup="calculateTex(this.value, 'cgst')" type="number" class="form-control fw-bold text-end" min="0" step="any" placeholder="Persentage"></td>
                         <td><input id="cgst" type="number" class="form-control fw-bold text-end" min="0" step="any" placeholder="Amount" value="0" readonly></td>
                     </tr>
                     <tr>
                         <th scope="row" ></th>
                         <td colspan="2" class="fw-bold fs-5">IGST</td>
-                        <td><input type="number" class="form-control fw-bold text-end" min="0" step="any" placeholder="Persentage"></td>
+                        <td><input onkeyup="calculateTex(this.value, 'igst')" type="number" class="form-control fw-bold text-end" min="0" step="any" placeholder="Persentage"></td>
                         <td><input id="igst" type="number" class="form-control fw-bold text-end" min="0" step="any" placeholder="Amount" value="0" readonly></td>
                     </tr>
                     <tr>
@@ -103,7 +103,7 @@
                     <tr>
                         <th scope="row" ></th>
                         <td colspan="2" class="fw-bold fs-5">Round Off</td>
-                        <td><input type="number" class="form-control fw-bold text-end" min="0" step="any" placeholder="Persentage"></td>
+                        <td><input onkeyup="calculateRoundOff(this.value, 'roundOff')" type="number" class="form-control fw-bold text-end" min="0" step="any" placeholder="Persentage"></td>
                         <td><input id="roundOff" type="number" class="form-control fw-bold text-end" min="0" step="any" placeholder="Amount" value="0" readonly></td>
                     </tr>
                     <tr class="table-group-divider">
@@ -114,6 +114,14 @@
                 </tfoot>
             </table>
         </div>
+    </div>
+</div>
+
+<div class="position-fixed bottom-0 left-0 w-50 py-4 ">
+    <div class="d-flex gap-3 justify-content-center">
+        <button class="btn header-cta btn-lg rounded-3 text-uppercase">Save</button>
+        <button class="btn btn-secondary btn-lg rounded-3 text-uppercase">Print</button>
+        <button class="btn btn-secondary btn-lg rounded-3 text-uppercase">Print</button>
     </div>
 </div>
 
