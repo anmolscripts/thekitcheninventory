@@ -12,7 +12,7 @@
 
 <?php get_header('new'); ?>
 
-
+<link rel="stylesheet" href="<?= get_stylesheet_directory_uri(); ?>/css/style.css">
 <style>
     .w-max-content {
         width: max-content !important;
@@ -28,6 +28,14 @@
     tbody * {
         vertical-align: middle !important;
     }
+
+    .bottom-box {
+        background-color: rgba(255,255,255,.8);
+        backdrop-filter: blur(5px);
+        transform: translateX(-50%);
+        left: 50% !important;
+        bottom: 1rem !important;
+    }
 </style>
 
 <div class="pt-5 mt-5">
@@ -38,15 +46,15 @@
             </div>
             <div class="d-flex justify-content-between align-items-center gap-5">
                 <div class="d-flex gap-3 w-50 align-items-center">
-                    <p class="w-max-content col-3 mb-0"><strong>Client :</strong></p><input type="text" class="form-control fw-bold" placeholder="Client Name">
+                    <p class="w-max-content col-3 mb-0"><strong>Client :</strong></p><input type="text" id="clientName" class="form-control fw-bold" placeholder="Client Name">
                 </div>
                 <div class="d-flex gap-3 w-50 align-items-center">
-                    <p class="w-max-content col-3 mb-0"><strong>Date :</strong></p><input type="date" class="form-control fw-bold" placeholder="Client Name">
+                    <p class="w-max-content col-3 mb-0"><strong>Date :</strong></p><input type="date" id="invoiceData" class="form-control fw-bold" placeholder="Client Name">
                 </div>
             </div>
             <div class="w-50 mx-auto mt-3">
                 <select class="form-select border-black rounded-0 border-3 py-2 fw-bold " id="inputGroupSelect01">
-                    <option selected disabled>Choose...</option>
+                    <option value="" selected disabled>Choose...</option>
                     <option value="1">Quotation</option>
                     <option value="2">Invoice</option>
                 </select>
@@ -117,11 +125,11 @@
     </div>
 </div>
 
-<div class="position-fixed bottom-0 left-0 w-50 py-4 ">
+<div class="position-fixed bottom-0 left-0 px-3 py-3 bottom-box rounded-pill shadow mx-auto">
     <div class="d-flex gap-3 justify-content-center">
-        <button class="btn header-cta btn-lg rounded-3 text-uppercase">Save</button>
-        <button class="btn btn-secondary btn-lg rounded-3 text-uppercase">Print</button>
-        <button class="btn btn-secondary btn-lg rounded-3 text-uppercase">Print</button>
+        <button onclick="getInvoiceData()" class="btn header-cta btn-lg rounded-pill text-uppercase shadow">Save</button>
+        <button class="btn btn-secondary btn-lg rounded-pill text-uppercase shadow">Print</button>
+        <button class="btn btn-secondary btn-lg rounded-pill text-uppercase shadow">Print</button>
     </div>
 </div>
 
