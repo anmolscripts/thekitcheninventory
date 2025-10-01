@@ -130,22 +130,67 @@ const getInvoiceData = () => {
   const date = checkForValue("invoiceData");
   date ? (data.date = date) : (flag = false);
 
-
-  const invoiceRows = document.querySelector('.invoice-body').querySelectorAll('tr');
-  if(invoiceRows.length > 0) {
-    let rowData = [];
-    invoiceRows.forEach(row => {
-       let obj ={};
-       if(row.querySelector('.item') && row.querySelector('.item').value.trim() !==''){
-            
-       }
-    })
-        
-  }
-
-
-
   const category = checkForValue("category");
   category ? (data.category = category) : (flag = false);
-  console.log(data, flag);
+
+  const invoiceRows = document
+    .querySelector(".invoice-body")
+    .querySelectorAll("tr");
+  if (invoiceRows.length > 0) {
+    let rowData = [];
+    invoiceRows.forEach((row) => {
+      if (
+        row.querySelector(".item") &&
+        row.querySelector(".item").value.trim() !== ""
+      ) {
+        rowData.push({
+          item: row.querySelector(".item").value,
+          qty: row.querySelector(".qty").value,
+          rate: row.querySelector(".rate").value,
+          amount: row.querySelector(".amount").value,
+        });
+      }
+    });
+
+    data.rowData = rowData;
+  }
+
+  const sgstPer = document.getElementById("sgstPer");
+  sgstPer ? (data.sgst = parseFloat(sgstPer.value).toFixed(2)) : 0.0;
+
+  const cgstPer = document.getElementById("cgstPer");
+  cgstPer ? (data.cgst = parseFloat(cgstPer.value).toFixed(2)) : 0.0;
+
+  const igstPer = document.getElementById("igstPer");
+  igstPer ? (data.igst = parseFloat(igstPer.value).toFixed(2)) : 0.0;
+
+  const roundoffValue = document.getElementById("roundoffValue");
+  roundoffValue
+    ? (data.roundoff = parseFloat(roundoffValue.value).toFixed(2))
+    : 0.0;
+
+    console.log(data);
+  $.ajax({
+    url: "/latest/wp-admin/admin-ajax.php", // WordPress ka predefined global var
+    type: "POST",
+    data: {
+      action: "run_stored_procedure",
+      sp_name: "insert_invoice_json",
+      params: data,
+    },
+    success: function (response) {
+      console.log("SP Result:", response);
+    },
+  });
 };
+
+document.addEventListener("DOMContentLoaded", () => {
+  $.ajax({
+    url: "/latest/wp-admin/admin-ajax.php", // WordPress ka predefined global var
+    type: "POST",
+    data: { action: "get_data" },
+    success: function (response) {
+      console.log("SP Result:", response);
+    },
+  });
+});
